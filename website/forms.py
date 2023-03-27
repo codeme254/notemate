@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Contains all the forms present in the application
+Concerned with all the forms in the application
 """
 
 from flask_wtf import FlaskForm
