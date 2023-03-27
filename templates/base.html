@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='media/images/design-notes.png') }}">
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Notemate &mdash; Create, Organize and Share your notes</title>
+    {% endif %}
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo"><span>N</span>ote<span>M</span>ate</h1>
+        <nav class="header__nav">
+            <ol class="header__navlist">
+                {% if current_user.is_authenticated %}
+                <li class="header__navitem">
+                    <a href="" class="header__navitem--link">
+                        <svg class="header__navitem--icon">
+                            <use xlink:href="static/media/images/sprite.svg#icon-home3"></use>
+                        </svg>
+                        <span>feed</span>
+                    </a>
+                </li>
+                <li class="header__navitem">
+                    <a href="" class="header__navitem--link">
+                        <svg class="header__navitem--icon">
+                            <use xlink:href="static/media/images/sprite.svg#icon-books"></use>
+                        </svg>
+                        <span>my notes</span>
+                    </a>
+                </li>
+
+                <li class="header__navitem">
+                    <a href="" class="header__navitem--link">
+                        <svg class="header__navitem--icon">
+                            <use xlink:href="static/media/images/sprite.svg#icon-plus"></use>
+                        </svg>
+                        <span>new note</span>
+                    </a>
+                </li>
+
+                <li class="header__navitem">
+                    <a href="{{ url_for('logout') }}" class="header__navitem--link">
+                        <svg class="header__navitem--icon">
+                            <use xlink:href="static/media/images/sprite.svg#icon-exit"></use>
+                        </svg>
+                        <span>Logout</span>
+                    </a>
+                </li>
+                <li class="header__navitem">
+                    <a href="{{ url_for('login') }}" class="header__navitem--link">
+                        <svg class="header__navitem--icon">
+                            <use xlink:href="static/media/images/sprite.svg#icon-user-tie"></use>
+                        </svg>
+                        <span>Welcome {{ current_user.preferred_username }}</span>
+                    </a>
+                </li>
+                {% else %}
+                <li class="header__navitem">
+                    <a href="" class="header__navitem--link">
+                        <svg class="header__navitem--icon">
+                            <use xlink:href="static/media/images/sprite.svg#icon-home3"></use>
+                        </svg>
+                        <span>home</span>
+                    </a>
+                </li>
+
+                <li class="header__navitem">
+                    <a href="{{ url_for('login') }}" class="header__navitem--link">
+                        <svg class="header__navitem--icon">
+                            <use xlink:href="static/media/images/sprite.svg#icon-user-tie"></use>
+                        </svg>
+                        <span>login</span>
+                    </a>
+                </li>
+
+                <li class="header__navitem">
+                    <a href="{{ url_for('sign_up') }}" class="header__navitem--link">
+                        <svg class="header__navitem--icon">
+                            <use xlink:href="static/media/images/sprite.svg#icon-profile"></use>
+                        </svg>
+                        <span>sign up</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ol>
+        </nav>
+    </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+    {% block pagecontent %}
+    {% endblock pagecontent%}
+</body>
+</html>

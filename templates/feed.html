@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block pagecontent %}
+<section class="feeds-section">
+    <div class="feed-section__user">
+        <div class="user__profile-avartar-letters">
+            {{current_user.first_name[0]}}{{current_user.last_name[0]}}
+        </div>
+        <a href="" class="user-new-note">
+            <svg class="header__navitem--icon">
+                <use xlink:href="static/media/images/sprite.svg#icon-plus"></use>
+            </svg>
+            <span>new notesheet</span>
+        </a>
+
+        <div class="user-notes">
+            <p class="user-notes__title">All your notes</p>
+            <a href="" class="user-notes__note">figma basic concepts</a>
+            <a href="" class="user-notes__note">inline and block elements</a>
+            <a href="" class="user-notes__note">all flags of the ls command</a>
+            <a href="" class="user-notes__note">How to deploy a flask app to linode</a>
+            <a href="" class="user-notes__note">ssh in details</a>
+            <a href="" class="user-notes__note">flexbox concepts demistified</a>
+            <a href="" class="user-notes__note">implementing your own socket</a>
+            <a href="" class="user-notes__note">what are middlewares</a>
+            <a href="" class="user-notes__note">flask blueprints</a>
+            <a href="" class="user-notes__note">flask authentication</a>
+            <a href="" class="user-notes__note">resize images with pillow</a>
+            <a href="" class="user-notes__note">configuring a flask app</a>
+        </div>
+    </div>
+    <div class="feed-section__notes">
+        <!-- <h2>soon notes will come here</h2> -->
+        
+        <div class="note-feed">
+            <div class="note-feed__header">
+                <div class="note-feed__avartar">TU</div>
+                <div class="note-feed__user-about">
+                    <h5 class="note-feed__user-about--name">Test User1</h5>
+                    <p class="note-feed__user-about--date">Posted on <span>23-07-2023</span></p>
+                </div>
+            </div>
+            <div class="note-feed__body">
+                <h3 class="note-feed__body--title">configuring environment variables in python flask</h3>
+                <p class="note-feed__body--preview-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere atque, porro sint fugiat voluptatibus animi dignissimos cum vero quae enim aperiam eligendi qui id fugit iure perspiciatis omnis velit odit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium pariatur nisi ab, dolores asperiores itaque aut, eveniet est doloribus, molestiae exercitationem recusandae numquam eius ullam quas nihil. Maiores, facilis unde!
+                </p>
+                <div class="note-feed__actions">
+                    <a href="" class="note-feed__actions--btn">Read full</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="note-feed">
+            <div class="note-feed__header">
+                <div class="note-feed__avartar">TU</div>
+                <div class="note-feed__user-about">
+                    <h5 class="note-feed__user-about--name">Test User1</h5>
+                    <p class="note-feed__user-about--date">Posted on <span>23-07-2023</span></p>
+                </div>
+            </div>
+            <div class="note-feed__body">
+                <h3 class="note-feed__body--title">configuring environment variables in python flask</h3>
+                <p class="note-feed__body--preview-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere atque, porro sint fugiat voluptatibus animi dignissimos cum vero quae enim aperiam eligendi qui id fugit iure perspiciatis omnis velit odit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium pariatur nisi ab, dolores asperiores itaque aut, eveniet est doloribus, molestiae exercitationem recusandae numquam eius ullam quas nihil. Maiores, facilis unde!
+                </p>
+                <div class="note-feed__actions">
+                    <a href="" class="note-feed__actions--btn">Read full</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock pagecontent %}

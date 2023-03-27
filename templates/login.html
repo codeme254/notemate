@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block pagecontent %}
+<section class="login-section">
+    <div class="u-form-width-60">
+        <form method="POST" class="page-form">
+            <h2 class="sign-up-section--title">Log into your account</h2>
+            {{ form.hidden_tag() }}
+    
+            <div class="form-group">
+                {{ form.email_address.label(class="form-group-label") }}
+                {{ form.email_address(class="form-group-input", placeholder="enter your email address") }}
+            </div>
+    
+            <div class="form-group">
+                {{ form.password.label(class="form-group-label") }}
+                {{ form.password(class="form-group-input", placeholder="password") }}
+            </div>
+
+            <div class="u-form-controls">
+                {{ form.submit(class="form__button") }}
+                <p class="form-controls__text">
+                    Don't have an account? <a href="{{ url_for('sign_up') }}">Sign Up</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock pagecontent%}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block pagecontent %}
+<section class="sign-up-section">
+    <h2 class="sign-up-section--title">Streamline Your Life with Online Note-Taking!</h2>
+    <form method="POST" action="" class="page-form sign-up-form">
+        {{ form.hidden_tag() }}
+        <div class="form-flex">
+            <div class="form-group">
+                {{ form.first_name.label(class="form-group-label") }}
+                {{ form.first_name(class="form-group-input", placeholder="first name") }}
+            </div>
+    
+            <div class="form-group">
+                {{ form.last_name.label(class="form-group-label") }}
+                {{ form.last_name(class="form-group-input", placeholder="last name") }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form.email_address.label(class="form-group-label") }}
+            {{ form.email_address(class="form-group-input", placeholder="your email address") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.password.label(class="form-group-label") }}
+            {{ form.password(class="form-group-input", placeholder="password") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.confirm_password.label(class="form-group-label") }}
+            {{ form.confirm_password(class="form-group-input", placeholder="confirm password") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.preferred_username.label(class="form-group-label") }}
+            {{ form.preferred_username(class="form-group-input", placeholder="preferred username") }}
+        </div>
+
+        <div class="u-form-controls">
+            {{ form.submit(class="form__button") }}
+            <p>
+                Already have an account? <a href="{{ url_for('login') }}">Login</a>
+            </p>
+        </div>
+    </form>
+</section>
+{% endblock pagecontent %}

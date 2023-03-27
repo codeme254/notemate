@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block pagecontent %}
+<section class="get-started-section">
+    <img src="{{ url_for('static', filename='media/images/taking-notes.png') }}" alt="taking notes" class="get-started-section__image">
+    <div class="get-started-section__side">
+        <h2 class="get-started-section__banner--title">NoteMate &mdash; create, organize and share notes online</h2>
+        <p class="get-started-section__banner--text">
+            Unleash your creativity and simplify your life with our online note-taking platform. Whether it's for personal or professional use, our intuitive tools and seamless sharing capabilities make organizing and collaborating on notes effortless. Join our community today and start elevating your note-taking game.
+        </p>
+        <div class="get-started-section__action">
+            <a href="{{ url_for('sign_up') }}" class="get-started-section__action--cta">Sign Up</a>
+            <a href="{{ url_for('login') }}" class="get-started-section__action--cta">log in</a>
+        </div>
+    </div>
+</section>
+{% endblock pagecontent%}
