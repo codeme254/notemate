@@ -2,8 +2,12 @@
 {% block pagecontent %}
 <section class="feeds-section">
     <div class="feed-section__user">
-        <div class="user__profile-avartar-letters">
+        <!-- is to appear if the user doesn't have a profile photo -->
+        <!-- <div class="user__profile-avartar-letters">
             {{current_user.first_name[0]}}{{current_user.last_name[0]}}
+        </div> -->
+        <div class="user-profile-avartar__image">
+            <img src="{{ url_for('static', filename='media/images/default-2.jpg') }}" alt="caaren">
         </div>
         <a href="" class="user-new-note">
             <svg class="header__navitem--icon">
@@ -30,19 +34,42 @@
     </div>
     <div class="feed-section__notes">
         <!-- <h2>soon notes will come here</h2> -->
+        <div class="note-feed">
+            <div class="note-feed__header">
+                <!-- <div class="note-feed__avartar">DO</div> -->
+                <div class="note-avartar__image">
+                    <img src="{{ url_for('static', filename='media/images/default.jpg') }}" alt="Dennis Otwoma">
+                </div>
+                <div class="note-feed__user-about">
+                    <h5 class="note-feed__user-about--name">Dennis Otwoma</h5>
+                    <p class="note-feed__user-about--date">Posted on <span>29-07-2023</span></p>
+                </div>
+            </div>
+            <div class="note-feed__body">
+                <h3 class="note-feed__body--title">server vs client in full details</h3>
+                <p class="note-feed__body--preview-text">
+                    In a networked environment, a server is a program or device that provides resources or services to other devices on the network. A client, on the other hand, is a program or device that requests access to these resources or services from the server. The main difference between a server and a client is that the server is always active and available to respond to requests, while the client initiates requests and waits for the server to respond. Servers typically have more resources and computing power than clients, which allows them to handle multiple client requests simultaneously.
+                </p>
+                <div class="note-feed__actions">
+                    <a href="" class="note-feed__actions--btn">Read full</a>
+                </div>
+            </div>
+        </div>
+
+
         
         <div class="note-feed">
             <div class="note-feed__header">
-                <div class="note-feed__avartar">TU</div>
+                <div class="note-feed__avartar">SO</div>
                 <div class="note-feed__user-about">
-                    <h5 class="note-feed__user-about--name">Test User1</h5>
-                    <p class="note-feed__user-about--date">Posted on <span>23-07-2023</span></p>
+                    <h5 class="note-feed__user-about--name">Samuel Okoth</h5>
+                    <p class="note-feed__user-about--date">Posted on <span>29-07-2023</span></p>
                 </div>
             </div>
             <div class="note-feed__body">
                 <h3 class="note-feed__body--title">configuring environment variables in python flask</h3>
                 <p class="note-feed__body--preview-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere atque, porro sint fugiat voluptatibus animi dignissimos cum vero quae enim aperiam eligendi qui id fugit iure perspiciatis omnis velit odit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium pariatur nisi ab, dolores asperiores itaque aut, eveniet est doloribus, molestiae exercitationem recusandae numquam eius ullam quas nihil. Maiores, facilis unde!
+                    In Python, environment variables are typically used to store configuration settings that can be accessed by the code at runtime. They can be set and retrieved using the 'os' module or through third-party packages like 'python-dotenv'. Properly configuring environment variables is crucial for maintaining the security and scalability of a Python application.
                 </p>
                 <div class="note-feed__actions">
                     <a href="" class="note-feed__actions--btn">Read full</a>
